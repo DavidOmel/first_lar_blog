@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+//Route::get('{id}/{name}', 'Index');
+
+Route::get('regist', 'Registration@Showreg');
+Route::post('regist', 'Registration@Makereg')->name('postreg');
+
+Route::get('authent', 'Entry@Showsec')->name('entry');
+Route::post('authent', 'Entry@Makesec')->name('postsec');
