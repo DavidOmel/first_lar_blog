@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $fillable = [
-        'name', 'email', 'password', 'remember_token', 'token'
+        'name', 'email', 'password', '_token'
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password', '_token',
     ];
 }
 

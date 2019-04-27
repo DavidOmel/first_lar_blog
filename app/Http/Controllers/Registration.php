@@ -3,39 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RequestUser;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Secure;
 
 class Registration extends Controller
 {
     public function Showreg(){
-        return view('reg');
+        return view('For_auth\reg');
     }
 
-    public function Makereg(Request $request){
+   // _________________________________________________________________________________//
+
+    public function Makereg(RequestUser $request){
+
         session_start() ;
         $_SESSION['name'] = $request->name;
         $_SESSION['email'] = $request->email;
-        $_SESSION['password'] = $request->password;
+        $_SESSION['password'] = $request->pw;
+        $_SESSION['_token'] = $request->_token;
 
-        $this->validate($request, [
-            'name' => 'alpha_dash|max:50',
-            'email' => 'unique:users',
-            'password' => 'digits_between:5,16|same:confirm',
-        ]);
-
-         //удаление данных сессий после успешной регистрации:
-        $_SESSION['name'] = null;
-        $_SESSION['email'] = null;
-        $_SESSION['password'] = null;
-
-
-        $data = $request->all();
         $user = new User;
-        $user->fill($data);
-        $user->save();
-        return redirect(route('entry'));
+        // защита от xss-аттак:
+        $user->name = preg_replace('#<[^>]+>#', ' ', $request->name);
+        $user->email = $request->email;
+        $user->_token = $request->_token;
+
+        $letter = new Secure($user);
+        Mail::to($user)->send($letter);
+
+        return view('For_auth\check-post', ['user' => $user]);
 
     }
 
+
+   // _________________________________________________________________________________//
+
+    public function secure($_token){
+        session_start() ;
+        if ($_SESSION['_token'] == $_token){
+
+            $user = new User;
+            $user->name = $_SESSION['name'];
+            $user->email = $_SESSION['email'];
+            $user->password = md5($_SESSION['password']);
+            $user->_token = $_SESSION['_token'];
+
+            if($_SESSION['password'] == 'adminroot' && $user->name == 'Admin'){
+                $user->isadmin = 1;
+            }
+            session_unset();
+
+            $user->save();
+            return redirect(route('entry'));
+        }
+        else
+            return "Пожалуйста, подтверждайте почту с устройства,
+      с которого регистрировались.";
     }
+
+}
 

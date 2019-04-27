@@ -14,11 +14,16 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
+            $table->increments('id')->unsigned();
+            $table->string('title', 255)->unique();
             $table->text('short_text');
             $table->text('full_text');
-            $table->string('author')->nullable();
+            $table->string('author', 200);
+            $table->integer('category_id')->unsigned();
+            $table->string('category_name');
+            $table->string('img');
+            $table->text('views_ip_id')->nullable();
+            $table->integer('views')->nullable()->unsigned();
             $table->timestamps();
         });
     }

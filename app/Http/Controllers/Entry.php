@@ -4,49 +4,52 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Article;
+use App\Models\Comment;
 
 class Entry extends Controller
 {
     public function Showsec(){
-        return view('entry');
+        return view('For_auth\entry');
     }
-    public function Makesec(Request $request){
+    public function Makesec(Request $request)
+    {
+        $password = md5($request->password);
 
-        //преобразование для удобства
-        $email = $request->email;
-        $password = $request->password;
-        $token = $request->_token;
-        $rem = $request->remeber;
+        $secure_password = false;
+        $error['val_pw'] = $request->password;
+        $error['val_email'] = $request->email;
 
-        $user = User::all();
 
-        //перебераем каждую запись, чтобы определить пользователя по введенным данным
-        foreach ($user as $line){
-            $EDB = $line->email;
-            $PDB = $line->password;
-            //если авторизация - успешна:
-            if($EDB == $email && $PDB == $password){
+        $users = User::all();
 
-                //условие для отправки токена
-                if($rem == true){
-                    $line->remember_token = $token;
-                    $line->save();
-                }
+          //проверка почты:
+        $user = User::where('email', $request->email)->first();
+               //проверка пароля:
+          if(isset($user->password)){
+              if ($user->password == $password)$secure_password = true;
+          }
 
-                return view('index', ['user' => $line]);
-            }
+        //если авторизация - успешна:
+        if ($secure_password == true) {
 
-            //непрравильный пароль:
-            if($EDB == $email && $PDB != $password){
-                return " Вы ввели неправильно пароль!";
-            }
+            $user->_token = $request->_token;
+            $user->save();
+
+            if ($user->isadmin != 0) {
+                return redirect(route('AdminProfile', ['user' => $user->id]));
+            } else return redirect(route('InProfile', ['user' => $user->id]));
         }
-        return 'Такой пользователь незарегистрирован на сайте. 
-                Введите правильно свои данные!!!'.$EDB;
 
+        //непрравильный пароль:
+        if ($secure_password == false && $user != null) {
+            $error['password'] = " * Вы ввели неправильно пароль!";
+            return view('For_auth\entry', ['error' => $error]);
+        }
 
-
-        //dd($request->all());
+        //если такой записи не существует:
+        $error['email'] = "* Этой почты нет на сайте, введите правильно данные";
+        return view('For_auth\entry', ['error' => $error]);
     }
 
 }
