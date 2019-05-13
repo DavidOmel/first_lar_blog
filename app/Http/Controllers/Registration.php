@@ -11,7 +11,7 @@ use App\Mail\Secure;
 class Registration extends Controller
 {
     public function Showreg(){
-        return view('For_auth\reg');
+        return view('For_auth.reg');
     }
 
    // _________________________________________________________________________________//
@@ -33,7 +33,7 @@ class Registration extends Controller
         $letter = new Secure($user);
         Mail::to($user)->send($letter);
 
-        return view('For_auth\check-post', ['user' => $user]);
+        return view('For_auth.check-post', ['user' => $user]);
 
     }
 

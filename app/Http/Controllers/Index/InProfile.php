@@ -29,13 +29,13 @@ class InProfile extends Controller
 
                 $articles = $articles->where('id', '<', $latest_id)->take(6);
 
-                return view('InProfile\index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
+                return view('InProfile.index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
                     'categories' => $categories, 'category' => $category, 'pages' => $pages, 'page' => $page]);
             }
 
             else{
                 $articles = $articles->take(6);
-                return view('InProfile\index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
+                return view('InProfile.index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
                     'categories' => $categories, 'category' => $category,
                     'pages' => $pages, 'page' => $page]);
             }
@@ -49,13 +49,13 @@ class InProfile extends Controller
             $latest_id = $articles->take($last_articles)->min()->id;
 
             $articles = $articles->where('id', '<', $latest_id)->take(6);
-            return view('InProfile\index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
+            return view('InProfile.index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
                 'categories' => $categories, 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
 
         else{
             $articles = $articles->take(6);
-            return view('InProfile\index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
+            return view('InProfile.index', ['active_new' => $active_new, 'user' => $user, 'articles' => $articles,
                 'categories' => $categories, 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
     }
@@ -79,14 +79,14 @@ class InProfile extends Controller
 
                 $articles = $articles->where('views', '<', $latest_views)->take(6);
 
-                return view('InProfile\index', ['user' => $user, 'active_pop' => $active_pop,
+                return view('InProfile.index', ['user' => $user, 'active_pop' => $active_pop,
                     'articles' => $articles, 'categories' => $categories,
                     'category' => $category, 'pages' => $pages, 'page' => $page]);
             }
 
             else{
                 $articles = $articles->take(6);
-                return view('InProfile\index', ['user' => $user, 'active_pop' => $active_pop,
+                return view('InProfile.index', ['user' => $user, 'active_pop' => $active_pop,
                     'articles' => $articles, 'categories' => $categories, 'category' => $category,
                     'pages' => $pages, 'page' => $page]);
             }
@@ -100,14 +100,14 @@ class InProfile extends Controller
             $latest_views = $articles->take($last_articles)->min('views');
 
             $articles = $articles->where('views', '<', $latest_views)->take(6);
-            return view('InProfile\index', ['user' => $user, 'active_pop' => $active_pop,
+            return view('InProfile.index', ['user' => $user, 'active_pop' => $active_pop,
                 'articles' => $articles, 'categories' => $categories,
                 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
 
         else{
             $articles = $articles->take(6);
-            return view('InProfile\index', ['user' => $user, 'active_pop' => $active_pop,
+            return view('InProfile.index', ['user' => $user, 'active_pop' => $active_pop,
                 'articles' => $articles, 'categories' => $categories,
                 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }

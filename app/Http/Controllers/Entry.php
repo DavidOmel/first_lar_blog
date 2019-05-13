@@ -10,7 +10,7 @@ use App\Models\Comment;
 class Entry extends Controller
 {
     public function Showsec(){
-        return view('For_auth\entry');
+        return view('For_auth.entry');
     }
     public function Makesec(Request $request)
     {
@@ -44,12 +44,12 @@ class Entry extends Controller
         //непрравильный пароль:
         if ($secure_password == false && $user != null) {
             $error['password'] = " * Вы ввели неправильно пароль!";
-            return view('For_auth\entry', ['error' => $error]);
+            return view('For_auth.entry', ['error' => $error]);
         }
 
         //если такой записи не существует:
         $error['email'] = "* Этой почты нет на сайте, введите правильно данные";
-        return view('For_auth\entry', ['error' => $error]);
+        return view('For_auth.entry', ['error' => $error]);
     }
 
 }

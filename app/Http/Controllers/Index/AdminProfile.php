@@ -13,6 +13,6 @@ class AdminProfile extends Controller
 {
     public function show(User $user){
         $visitors = count(Ip_address::all());
-        return view('AdminProfile\index', ['user' => $user, 'visitors' => $visitors]);
+        return view('AdminProfile.index', ['user' => $user, 'visitors' => $visitors]);
     }
 }

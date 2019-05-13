@@ -10,16 +10,10 @@ use Illuminate\Http\Request;
 class CategoryCont extends Controller
 {
 
-    public function index()
-    {
-        //
-    }
-
-
     public function create(User $user)
     {
         $categories = Category::all();
-        return view('AdminProfile\category', ['user' => $user, 'categories' => $categories]);
+        return view('AdminProfile.category', ['user' => $user, 'categories' => $categories]);
     }
 
 

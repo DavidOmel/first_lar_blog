@@ -14,16 +14,16 @@ class UserController extends Controller
     public function list(User $user)
     {
         $users = User::all();
-        return view('AdminProfile\list_users', ['user' => $user, 'users' => $users]);
+        return view('AdminProfile.list_users', ['user' => $user, 'users' => $users]);
     }
 
 
 
     public function restore_show(User $user){
-        if ($user->email != null)return view('For_auth\restore_of_password',
+        if ($user->email != null)return view('For_auth.restore_of_password',
             ['user' => $user]);
 
-        else return view('For_auth\restore_of_password');
+        else return view('For_auth.restore_of_password');
 
     }
 
@@ -33,7 +33,7 @@ class UserController extends Controller
         $user = User::where('email', $request->email_restore)->first();
         $letter = new Change_password($user);
         Mail::to($user)->send($letter);
-        return view('For_auth\check-post', ['user' => $user]);
+        return view('For_auth.check-post', ['user' => $user]);
     }
 
 

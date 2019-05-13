@@ -17,7 +17,7 @@ class ArticleContr extends Controller
     public function list(User $user)
     {
         $articles = Article::all()->where('author', $user->name);
-        return view('AdminProfile\list_articles', ['user' => $user,
+        return view('AdminProfile.list_articles', ['user' => $user,
           'articles' => $articles]);
     }
 
@@ -25,7 +25,7 @@ class ArticleContr extends Controller
     public function create(User $user)
     {
         $categories = Category::all();
-        return view('AdminProfile\create', ['user' => $user, 'categories' => $categories]);
+        return view('AdminProfile.create', ['user' => $user, 'categories' => $categories]);
     }
 
 
@@ -117,7 +117,7 @@ class ArticleContr extends Controller
 
 
         $comments = Comment::all()->where('article_id', $article->id)->reverse();
-        return view('InProfile\show', ['user' => $user,
+        return view('InProfile.show', ['user' => $user,
             'article' => $article, 'comments' => $comments]);
     }
 
@@ -168,7 +168,7 @@ class ArticleContr extends Controller
             }
 
             $comments = Comment::all()->where('article_id', $article->id)->reverse();
-            return view('OutProfile\show', ['article' => $article,
+            return view('OutProfile.show', ['article' => $article,
                 'comments' => $comments]);
     }
 
@@ -177,7 +177,7 @@ class ArticleContr extends Controller
     {
         $categories = Category::where('name', '!=', $article->category_name)->get();
 
-        return view('AdminProfile\edit', ['user' => $user,
+        return view('AdminProfile.edit', ['user' => $user,
             'article' => $article,'categories' => $categories]);
     }
 

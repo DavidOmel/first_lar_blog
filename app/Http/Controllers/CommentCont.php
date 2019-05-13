@@ -11,16 +11,7 @@ use App\Models\Comment;
 
 class CommentCont extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
-
+   
     public function store(RequestComment $request, User $user, Article $article)
     {
         $comment = new Comment;
@@ -33,20 +24,6 @@ class CommentCont extends Controller
         $comment->save();
         return redirect(route('articles.show', ['id' => $user->id, 'article' => $article]));
 
-    }
-
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-
-    public function edit($id)
-    {
-        //
     }
 
 

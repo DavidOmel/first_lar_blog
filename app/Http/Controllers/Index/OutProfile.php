@@ -28,14 +28,14 @@ class OutProfile extends Controller
 
                $articles = $articles->where('id', '<', $latest_id)->take(6);
 
-               return view('OutProfile\index', ['active_new' => $active_new,
+               return view('OutProfile.index', ['active_new' => $active_new,
                    'articles' => $articles, 'categories' => $categories,
                    'category' => $category, 'pages' => $pages, 'page' => $page]);
            }
 
            else{
            $articles = $articles->take(6);
-           return view('OutProfile\index', ['active_new' => $active_new,
+           return view('OutProfile.index', ['active_new' => $active_new,
                'articles' => $articles, 'categories' => $categories,
                'category' => $category, 'pages' => $pages, 'page' => $page]);
            }
@@ -49,7 +49,7 @@ class OutProfile extends Controller
                 $latest_id = $articles->take($last_articles)->min()->id;
 
                 $articles = $articles->where('id', '<', $latest_id)->take(6);
-                return view('OutProfile\index', ['active_new' => $active_new,
+                return view('OutProfile.index', ['active_new' => $active_new,
                     'articles' => $articles, 'categories' => $categories,
                     'category' => $category, 'pages' => $pages, 'page' => $page]);
             }
@@ -92,14 +92,14 @@ class OutProfile extends Controller
 
                 $articles = $articles->where('views', '<', $latest_views)->take(6);
 
-                return view('OutProfile\index', ['active_pop' => $active_pop,
+                return view('OutProfile.index', ['active_pop' => $active_pop,
                     'articles' => $articles, 'categories' => $categories,
                     'category' => $category, 'pages' => $pages, 'page' => $page]);
             }
 
             else{
                 $articles = $articles->take(6);
-                return view('OutProfile\index', ['active_pop' => $active_pop,
+                return view('OutProfile.index', ['active_pop' => $active_pop,
                     'articles' => $articles, 'categories' => $categories, 'category' => $category,
                     'pages' => $pages, 'page' => $page]);
             }
@@ -113,14 +113,14 @@ class OutProfile extends Controller
             $latest_views = $articles->take($last_articles)->min('views');
 
             $articles = $articles->where('views', '<', $latest_views)->take(6);
-            return view('OutProfile\index', ['active_pop' => $active_pop,
+            return view('OutProfile.index', ['active_pop' => $active_pop,
                 'articles' => $articles, 'categories' => $categories,
                 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
 
         else{
             $articles = $articles->take(6);
-            return view('OutProfile\index', ['active_pop' => $active_pop,
+            return view('OutProfile.index', ['active_pop' => $active_pop,
                 'articles' => $articles, 'categories' => $categories,
                 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
