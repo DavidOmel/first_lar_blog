@@ -71,7 +71,7 @@
     </style>
 
       <title> BlogForYou</title>
-      <link rel="icon" type="image\png" href="{{asset('icons\site.png')}}">
+      <link rel="icon" type="image\png" href="/img/site.png">
   </head>
   <body>
     
@@ -160,7 +160,7 @@
                                 ])}}" class="btn btn-primary btn-more">
                               Подробнее
                             </a>
-                            <span id="views"><img id="icon" src="{{asset('icons\show.png')}}">{{$article->views}}</span>
+                            <span id="views"><img id="icon" src="/img/show.png">{{$article->views}}</span>
                         </div>
                      </div>
                   </div> <!-- col-4 блок для цикла-->

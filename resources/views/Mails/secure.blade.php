@@ -23,6 +23,7 @@
 <h3>{{$user->name}}, для подтверждения регистрации нажмите на кнопку ниже:</h3><br>
 
 <form method="get" action="{{route('regsecFrom', ['_token' => $user->_token])}}">
+    @csrf
     <button type="submit">ПОДТВЕРЖДАЮ</button>
 </form>
 

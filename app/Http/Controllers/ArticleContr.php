@@ -95,7 +95,7 @@ class ArticleContr extends Controller
                         break;
                     }
                     else{
-                        $watched_id = null;dd($watched_id);
+                        $watched_id = null;
                         $add = true;
                     }
                 }
@@ -149,7 +149,7 @@ class ArticleContr extends Controller
                             break;
                         }
                         else{
-                            $watched_id = null;dd($watched_id);
+                            $watched_id = null;
                             $add = true;
                         }
                     }

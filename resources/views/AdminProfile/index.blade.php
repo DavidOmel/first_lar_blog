@@ -88,7 +88,7 @@
     </style>
 
     <title> BlogForYou</title>
-    <link rel="icon" type="image\png" href="{{asset('icons\site.png')}}">
+    <link rel="icon" type="image\png" href="/img/site.png">
 </head>
 <body>
 

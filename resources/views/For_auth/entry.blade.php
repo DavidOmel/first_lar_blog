@@ -23,7 +23,7 @@
 
     </style>
     <title> BlogForYou</title>
-    <link rel="icon" type="image\png" href="{{asset('icons\site.png')}}">
+    <link rel="icon" type="image\png" href="/img/site.png">
 </head>
 <body>
 
@@ -51,7 +51,7 @@
                         <span class="text-danger">{{$error['password']}}</span><br>
                     @endif
                     <input type="password" value="@if(isset($error['val_pw'])){{$error['val_pw']}}@endif"  name="password" class="form-control" id="inp-2">
-                    <img id="show-password" src="icons\notshow.png">
+                    <img id="show-password" src="/img/notshow.png">
                     <a href="{{route('restore')}}" class="">Забыли пароль?</a>
                 </div>
 
@@ -72,14 +72,14 @@
     $(function () {
         $('#show-password').click(function () {
             var src = $('#show-password').attr('src');
-            if (src == 'icons\\notshow.png'){
-                src = 'icons\\show.png';
+            if (src == '/img/notshow.png'){
+                src = '/img/show.png';
                 $('#show-password').attr('src', src);
 
                 $('#inp-2').attr('type', 'text');
             }
             else {
-                src = 'icons\\notshow.png';
+                src = '/img/notshow.png';
                 $('#show-password').attr('src', src);
 
                 $('#inp-2').attr('type', 'password');

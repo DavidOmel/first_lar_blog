@@ -32,7 +32,7 @@
     </style>
 
     <title> BlogForYou</title>
-    <link rel="icon" type="image\png" href="{{asset('icons\site.png')}}">
+    <link rel="icon" type="image\png" href="/img/site.png">
 </head>
 <body>
 
@@ -74,7 +74,7 @@
                         @endforeach
                     @endif
                     <input value="{{old('pw')}}" type="password" name="pw" class="form-control" id="inp-3">
-                    <img id="show-password" src="icons\notshow.png">
+                    <img id="show-password" src="/img/notshow.png">
                 </div>
 
                 <div class="form-group mb-5" id="div-4">
@@ -104,15 +104,15 @@
     $(function () {
         $('#show-password').click(function () {
             var src = $('#show-password').attr('src');
-            if (src == 'icons\\notshow.png'){
-                src = 'icons\\show.png';
+            if (src == '/img/notshow.png'){
+                src = '/img/show.png';
                 $('#show-password').attr('src', src);
 
                 $('#inp-3').attr('type', 'text');
                 $('#inp-4').attr('type', 'text');
             }
             else {
-                src = 'icons\\notshow.png';
+                src = '/img/notshow.png';
                 $('#show-password').attr('src', src);
 
                 $('#inp-3').attr('type', 'password');
