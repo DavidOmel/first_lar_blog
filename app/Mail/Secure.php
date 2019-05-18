@@ -30,6 +30,6 @@ class Secure extends Mailable
      */
     public function build()
     {
-        return $this->subject('Подтверждение регистрации')->view('Mails/secure');
+        return $this->subject('Подтверждение регистрации')->view('Mails.secure');
     }
 }
