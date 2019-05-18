@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7de96179-7551-4e94-a64d-9bd666afc45b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/InProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/InProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/InProfile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/InProfile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/InProfile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/InProfile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/OutProfile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/OutProfile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/OutProfile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/OutProfile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/Secure.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Secure.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +42,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/OutProfile/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="147">
               <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="903">
+              <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+              <folding>
+                <element signature="e#46#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Mail/Secure.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -100,7 +114,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/RequestComment.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/app/Mail/Change_password.php" />
-        <option value="$PROJECT_DIR$/app/Mail/Secure.php" />
         <option value="$PROJECT_DIR$/resources/views/For_auth/regsec.blade.php" />
         <option value="$USER_HOME$/Desktop/new.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Entry.php" />
@@ -136,6 +149,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" />
         <option value="$PROJECT_DIR$/resources/views/InProfile/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/OutProfile/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Mail/Secure.php" />
       </list>
     </option>
   </component>
@@ -230,22 +244,7 @@
               <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="first_lar_blog" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first_lar_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first_lar_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Index" type="462c0819:PsiDirectoryNode" />
+              <item name="Mail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -417,12 +416,12 @@
       <workItem from="1556347747677" duration="2625000" />
       <workItem from="1556355030419" duration="1050000" />
       <workItem from="1557685342580" duration="9000" />
-      <workItem from="1558087556060" duration="29392000" />
+      <workItem from="1558087556060" duration="31376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="641694000" />
+    <option name="totallyTimeSpent" value="643678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
@@ -501,13 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="30" column="7" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/Secure.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -721,16 +713,6 @@
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding>
-            <element signature="e#46#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/InProfile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -788,8 +770,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/OutProfile/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="147">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="e#46#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/Secure.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
         </state>
       </provider>
     </entry>
