@@ -43,16 +43,15 @@ class ArticleContr extends Controller
         // обрезка для short_text:
         foreach (str_split($request->full_text) as $char){
             if($k >= 300){
-                if ($char == '.' || $char == ' '){
-                    $short_text .= $char.'...';
+                if ($char == '.' || $char == ' ' || $char == '!' || $char == '?' || $char == ','){
+                    $short_text .= '...';
                     break;
                 }
             }
             $short_text .= $char;
             $k++;
-
-
         }
+
 
         $article->short_text = $short_text;
         $article->img = $path;
@@ -197,16 +196,15 @@ class ArticleContr extends Controller
         // обрезка для short_text:
         foreach (str_split($request->full_text) as $char){
             if($k >= 300){
-                if ($char == '.' || $char == ' '){
+                if ($char == '.' || $char == ' ' || $char == '!' || $char == '?' || $char == ','){
                     $short_text .= '...';
                     break;
                 }
             }
             $short_text .= $char;
             $k++;
-
-
         }
+
 
         $article->short_text = $short_text;
 

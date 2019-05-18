@@ -49,6 +49,10 @@
           font-size: 1.3rem;
           color: #B8B8B8;
       }
+
+      #icon-user{
+          width: 10%;
+      }
       .comment{
           word-wrap: break-word;
       }
@@ -72,7 +76,7 @@
               border-radius: 20px;
           }
           .lead{
-            font-size: 14px;
+            font-size: 16px;
             margin-top: -10%;
           }
           .title-comment{
@@ -112,12 +116,15 @@
             position: relative;
             left: 47%;
           }
-           .em08{
-            font-size: 0.8em;
+           .em08 {
+               font-size: 0.8em;
            }
-          .del-chan{
-            font-size: 0.7em;
-          }
+           #comment_but{
+               display: inline-flex;
+               position: relative;
+               top: 23px;
+               right: 40px;
+           }
           footer{
             font-size: 12px !important;
           }
@@ -129,6 +136,9 @@
               color: #B8B8B8;
           }
 
+          #icon-user{
+              width: 15%;
+          }
 
       }/* media.. */
     </style>
@@ -159,7 +169,7 @@
 
           <div class="col-11 d-flex flex-column align-items-center">
             <h1 class="display-4 mt-3 mb-3 title text-center">{{$article->title}}</h1>
-            <img src="/storage/{{$article->img}}" class="img-fluid mb-5 "></img>
+            <img src="/storage/{{$article->img}}" class="img-fluid mb-5 ">
             <p class="lead">
               {{$article->full_text}}
             </p>
@@ -237,7 +247,12 @@
             @if(isset($comments))<hr style="width: 90%">
               @foreach($comments as $comment)
                <div class="col-md-10 mb-md-0">
-                 <h3 class="">{{$comment->author}}<span class="date ml-3">{{$comment->created_at}}</span></h3>
+
+                   <img class="d-inline" src="/img/user.png" id="icon-user">
+
+                   <h3 class="d-inline">{{$comment->author}}
+                       <span class="date ml-3">{{$comment->created_at}}</span>
+                   </h3>
                  <div class="acts-but-com">
                    @if($user->id == $comment->author_id || $user->isadmin == 1)
 
@@ -247,14 +262,14 @@
                       @csrf
                      @if($user->id == $comment->author_id)
                      <button type="button" id="change-button"
-                      class="btn btn-primary text-light btn-sm del-chan">Изменить</button>
+                      class="btn btn-primary text-light btn-sm em08">Изменить</button>
                      @endif
-                     <button type="submit" class="btn btn-danger text-light 
-                       btn-sm del-chan">Удалить</button>
+                     <button type="submit" class="btn btn-danger text-light
+                       btn-sm em08 ml-1">Удалить</button>
                    </form>
                    @endif
                  </div>
-                 <p class="pl-4 comment">{{ $comment->text }}</p>
+                 <p class="pl-4 pt-4 comment">{{ $comment->text }}</p>
                  <hr class="{{$comment->id}}" style="width: 100%">
                </div>
                  <!--col-10-->
@@ -300,7 +315,7 @@
 
       $(function() {
 
-          $('.btn-primary.del-chan').click(function() {
+          $('#change-button').click(function() {
             var text_comment = $(this).parent().parent().siblings('p').text();
             $('#change').attr('class', '');
             $('#create').attr('class', 'd-none');

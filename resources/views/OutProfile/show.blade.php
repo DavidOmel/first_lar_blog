@@ -20,11 +20,16 @@
 
      .lead{
       margin-left: -3%;
+       white-space: pre-line;
      }
 
       .date{
         font-size: 0.9rem;
         color: #B8B8B8;
+      }
+
+      #icon-user{
+        width: 10%;
       }
 
 
@@ -40,7 +45,7 @@
               border-radius: 20px;
           }
           .lead{
-            font-size: 14px;
+            font-size: 16px;
             margin-top: -10%;
             white-space: pre-line;
           }
@@ -52,6 +57,11 @@
             margin-bottom: 0px !important;
             margin-top: 10px;
           }
+
+          #icon-user{
+            width: 15%;
+          }
+
           .date{
             font-size: 0.6rem;
           }
@@ -106,7 +116,8 @@
             @if(isset($comments))<hr style="width: 90%">
               @foreach($comments as $line)
                <div class="col-md-10 mb-md-3">
-                 <h3 class="">{{$line->author}}<span class="date ml-3">{{$line->created_at}}</span></h3>
+                 <img class="d-inline" src="/img/user.png" id="icon-user">
+                 <h3 class="d-inline">{{$line->author}}<span class="date ml-3">{{$line->created_at}}</span></h3>
                  <p class="pl-4 comment">{{ $line->text }}</p>
                </div><!--col-10-->
                <hr style="width: 90%">

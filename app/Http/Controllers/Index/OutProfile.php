@@ -10,59 +10,37 @@ use App\Http\Controllers\Controller;
 
 class OutProfile extends Controller
 {
-    public function New($page = 1, $category = null){
-        $articles = Article::all()->reverse();
-        $active_new = 'active';
+    public function New($page = 1, $category = null)
+    {
         $categories = Category::all();
+        $active_new = 'active';
+        $articles = Article::all()->reverse();
 
-       // Выборка по категории:
-       if($category != null){
-           $articles = $articles->where('category_id', $category);
-           // кол-во всех страниц в этой категории:
-           $pages = ceil(count($articles)/6);
 
-           if($page > 1){
-               // кол-во предыдущих статей:
-               $last_articles = ($page - 1)*6;
-               $latest_id = $articles->take($last_articles)->min()->id;
+        // Выборка по категории:
+        if ($category != null) {
+            $articles = $articles->where('category_id', $category);
 
-               $articles = $articles->where('id', '<', $latest_id)->take(6);
+            // кол-во всех страниц в этой категории:
+            $pages = ceil(count($articles) / 6);
+            $articles = $articles->forPage($page, 6);
 
-               return view('OutProfile.index', ['active_new' => $active_new,
-                   'articles' => $articles, 'categories' => $categories,
-                   'category' => $category, 'pages' => $pages, 'page' => $page]);
-           }
-
-           else{
-           $articles = $articles->take(6);
-           return view('OutProfile.index', ['active_new' => $active_new,
-               'articles' => $articles, 'categories' => $categories,
-               'category' => $category, 'pages' => $pages, 'page' => $page]);
-           }
-       }
+            return view('OutProfile.index', ['active_new' => $active_new,
+                'articles' => $articles, 'categories' => $categories, 'category' => $category,
+                'pages' => $pages, 'page' => $page]);
+        }
 
         //выборка из общего кол-ва:
-        $pages = ceil(count($articles)/6);  // кол-во всех страниц
-            if($page > 1){
-                // кол-во предыдущих статей:
-                $last_articles = ($page - 1)*6;
-                $latest_id = $articles->take($last_articles)->min()->id;
+        $pages = ceil(count($articles) / 6);  // кол-во всех страниц
+        $articles = $articles->forPage($page, 6);
 
-                $articles = $articles->where('id', '<', $latest_id)->take(6);
-                return view('OutProfile.index', ['active_new' => $active_new,
-                    'articles' => $articles, 'categories' => $categories,
-                    'category' => $category, 'pages' => $pages, 'page' => $page]);
-            }
-
-            else{
-            $articles = $articles->take(6);
-            return view('OutProfile\index', ['active_new' => $active_new,
-                'articles' => $articles, 'categories' => $categories,
-                'category' => $category, 'pages' => $pages, 'page' => $page]);
-            }
-
-
+        return view('OutProfile.index', ['active_new' => $active_new,
+            'articles' => $articles, 'categories' => $categories, 'category' => $category,
+            'pages' => $pages, 'page' => $page]);
     }
+
+
+
 
     public function Popular($page = 1, $category = null){
         // проверка на нового посетителя:
@@ -75,56 +53,29 @@ class OutProfile extends Controller
         }
 
 
-        $articles = Article::all()->sortByDesc('views');
-        $categories = Category::all();
         $active_pop = 'active';
+        $categories = Category::all();
+        $articles = Article::all()->sortByDesc('views');
 
         // Выборка по категории:
-        if($category != null){
+        if ($category != null) {
             $articles = $articles->where('category_id', $category);
             // кол-во всех страниц в этой категории:
-            $pages = ceil(count($articles)/6);
+            $pages = ceil(count($articles) / 6);
+            $articles = $articles->forPage($page, 6);
 
-            if($page > 1){
-                // кол-во предыдущих статей:
-                $last_articles = ($page - 1)*6;
-                $latest_views = $articles->take($last_articles)->min('views');
-
-                $articles = $articles->where('views', '<', $latest_views)->take(6);
-
-                return view('OutProfile.index', ['active_pop' => $active_pop,
-                    'articles' => $articles, 'categories' => $categories,
-                    'category' => $category, 'pages' => $pages, 'page' => $page]);
-            }
-
-            else{
-                $articles = $articles->take(6);
-                return view('OutProfile.index', ['active_pop' => $active_pop,
-                    'articles' => $articles, 'categories' => $categories, 'category' => $category,
-                    'pages' => $pages, 'page' => $page]);
-            }
-        }
-
-        //выборка из общего кол-ва:
-        $pages = ceil(count($articles)/6); // кол-во всех страниц
-        if($page > 1){
-            // кол-во предыдущих статей:
-            $last_articles = ($page - 1)*6;
-            $latest_views = $articles->take($last_articles)->min('views');
-
-            $articles = $articles->where('views', '<', $latest_views)->take(6);
             return view('OutProfile.index', ['active_pop' => $active_pop,
                 'articles' => $articles, 'categories' => $categories,
                 'category' => $category, 'pages' => $pages, 'page' => $page]);
         }
 
-        else{
-            $articles = $articles->take(6);
-            return view('OutProfile.index', ['active_pop' => $active_pop,
-                'articles' => $articles, 'categories' => $categories,
-                'category' => $category, 'pages' => $pages, 'page' => $page]);
-        }
+        // Выборка из общего кол-ва
 
+        $pages = ceil(count($articles) / 6); // кол-во всех страниц
+        $articles = $articles->forPage($page, 6);
 
+        return view('OutProfile.index', ['active_pop' => $active_pop,
+            'articles' => $articles, 'categories' => $categories,
+            'category' => $category, 'pages' => $pages, 'page' => $page]);
     }
 }

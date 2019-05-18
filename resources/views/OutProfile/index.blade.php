@@ -35,6 +35,7 @@
       }
       .card-text{
          margin-left: 4% !important;
+          white-space: pre-line;
       }
       #views{
         position: relative;
@@ -152,9 +153,7 @@
                         <img src="/storage/{{$article->img}}" class="card-img-top mt-3 px-3">
                         <div class="card-body">
                             <h5 class="card-title  text-center pr-4">{{$article->title}}</h5>
-                            <p class="card-text ml-3 ml-md-0">
-                              {{$article->short_text}}
-                            </p>
+                            <p class="card-text ml-3 ml-md-0">{{$article->short_text}}</p>
                             <a href="{{route('showarticle', [
                                'article' =>$article->id
                                 ])}}" class="btn btn-primary btn-more">
@@ -172,28 +171,76 @@
               </div><!-- row 2 -->
             </div><!-- col-12 -->
 
-            <div class="col-9 col-sm-7 col-md-6 d-flex flex-row justify-content-center">
-                @for($num = 1; $num <= $pages; $num++)
-                    <?php $active = null; if ($num == $page)$active = 'active'; ?>
-                  <a href="<?php
-                     if (isset($active_pop)){
-                         if ($category != null){
-                            echo route('category_out', ['page' =>$num, 'category' => $category]);
-                         }
-                         else echo route('out', ['page' => $num]);
-                     }
-                     else {
-                         if ($category != null){
-                             echo route('category_out_new', ['page' =>$num, 'category' => $category]);
-                         }
-                         else echo route('out_new', ['page' => $num]);
-                     }
-                     ?>"
-                      class="btn btn-outline-primary btn-lg {{$active}}"
-                  >{{$num}}
-                  </a>
-                @endfor
-            </div><!-- переход между стр -->
+              <div class="col-9 col-sm-7 col-md-6 d-flex flex-row justify-content-center">
+                  @if($page > 3)
+                      <a href="<?php
+                      if (isset($active_pop)){
+                          if ($category != null){
+                              echo route('category_out', ['page' =>(ceil($page / 3) * 3) - 3, 'category' => $category]);
+                          }
+                          else echo route('out', ['page' => (ceil($page / 3) * 3) - 3]);
+                      }
+                      else {
+                          if ($category != null){
+                              echo route('category_out_new', ['page' =>(ceil($page / 3) * 3) - 3, 'category' => $category]);
+                          }
+                          else echo route('out_new', ['page' => (ceil($page / 3) * 3) - 3]);
+                      }
+                      ?>"
+                         class="btn btn-outline-primary btn-lg mr-2"
+                      >...
+                      </a>
+                  @endif
+
+              <!-- (ceil($page / 3) * 3) - 2 определяем какая группа
+                страниц и находим первую из этой группы
+
+                 ceil($page / 3) * 3 определяем последнюю из этой группы -->
+
+
+                  @for($num = (ceil($page / 3) * 3) - 2; $num <= ceil($page / 3) * 3; $num++)
+                      <?php $active = null; if ($num == $page)$active = 'active';
+                      if ($num > $pages) break; ?>
+                      <a href="<?php
+                      if (isset($active_pop)){
+                          if ($category != null){
+                              echo route('category_out', ['page' =>$num, 'category' => $category]);
+                          }
+                          else echo route('out', ['page' => $num]);
+                      }
+                      else {
+                          if ($category != null){
+                              echo route('category_out_new', ['page' =>$num, 'category' => $category]);
+                          }
+                          else echo route('out_new', ['page' => $num]);
+                      }
+                      ?>"
+                         class="btn btn-outline-primary btn-lg mr-2 {{$active}}"
+                      >{{$num}}
+                      </a>
+                  @endfor
+
+                  @if($pages >= $num)
+                      <a href="<?php
+                      if (isset($active_pop)){
+                          if ($category != null){
+                              echo route('category_out', ['page' =>$num, 'category' => $category]);
+                          }
+                          else echo route('out', ['page' => $num]);
+                      }
+                      else {
+                          if ($category != null){
+                              echo route('category_out_new', ['page' =>$num, 'category' => $category]);
+                          }
+                          else echo route('out_new', ['page' => $num]);
+                      }
+                      ?>"
+                         class="btn btn-outline-primary btn-lg "
+                      >...
+                      </a>
+                  @endif
+
+              </div><!-- переход между стр -->
 
           </div><!-- row -->
         </div><!-- container -->
