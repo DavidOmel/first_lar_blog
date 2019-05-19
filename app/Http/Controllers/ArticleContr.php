@@ -52,7 +52,7 @@ class ArticleContr extends Controller
             $k++;
         }
 
-
+        $article->created_at = time();
         $article->short_text = $short_text;
         $article->img = $path;
         $article->category_id = $category->id;
@@ -75,6 +75,7 @@ class ArticleContr extends Controller
             // пользователь первый раз посетил сайт
             $new_ip = new Ip_address();
             $new_ip->address = $now_ip;
+            $new_ip->created_at = time();
             $new_ip->save();
 
             $article->views += 1;
@@ -207,6 +208,7 @@ class ArticleContr extends Controller
 
 
         $article->short_text = $short_text;
+        $article->updated_at = time();
 
         $category = Category::where('name', $request->category)->first();
         $article->category_id = $category->id;

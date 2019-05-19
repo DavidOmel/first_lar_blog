@@ -48,6 +48,7 @@ class OutProfile extends Controller
         $unique = Ip_address::where('address', $now_ip)->get()->IsEmpty();
         if($unique == true){
             $new_ip = new Ip_address();
+            $new_ip->created_at = time();
             $new_ip->address = $now_ip;
             $new_ip->save();
         }

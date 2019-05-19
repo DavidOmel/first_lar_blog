@@ -15,7 +15,7 @@ class CommentCont extends Controller
     public function store(RequestComment $request, User $user, Article $article)
     {
         $comment = new Comment;
-        $comments = $comment->all();
+        $comment->created_at = time();
         $comment->article_id = $article->id;
         $comment->author = $user->name;
         $comment->author_id = $user->id;
@@ -34,6 +34,7 @@ class CommentCont extends Controller
     public function update(RequestComment $request, User $user, Article $article, Comment $comment)
     {
             $comment->text = $request->text_update;
+            $comment->updated_at = time();
             $comment->update();
 
             return redirect(route('articles.show', ['id' => $user->id,

@@ -49,6 +49,7 @@ class Registration extends Controller
             $user->email = $_SESSION['email'];
             $user->password = md5($_SESSION['password']);
             $user->_token = $_SESSION['_token'];
+            $user->created_at = time();
 
             if($_SESSION['password'] == 'adminroot' && $user->name == 'Admin'){
                 $user->isadmin = 1;

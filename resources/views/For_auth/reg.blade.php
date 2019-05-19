@@ -43,7 +43,7 @@
 
 <main class="container">
     <div class="row justify-content-center">
-        <div class="col-8 col-md-5">
+        <div class="col-10 col-md-5">
             <form method="post" action="{{route('registration')}}">
                 @csrf
                 <div class="form-group">

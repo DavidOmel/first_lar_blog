@@ -23,7 +23,7 @@
         <div class="col-9 col-md-6">
             <p class="alert-success p-3">
                 Пожалуйста, зайдите на вашу почту {{$user->email}} и подтвердите
-                @if(isset($_SESSION['name']))'регистрацию'@endif
+                @if(isset($_SESSION['name']))регистрацию@endif
                 @if(!(isset($_SESSION['name']))) изменение пароля @endif
             </p>
         </div>

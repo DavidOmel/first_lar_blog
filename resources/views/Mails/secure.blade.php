@@ -9,23 +9,19 @@
         .text-danger{
             color: #F00B5B;
         }
-        button{
-            background-color: lightpink;
+        a{
             font-size: large;
-            margin-left: 35px;
+            margin-left: 100px;
         }
     </style>
 
     <title> BlogForYou</title>
-    <link rel="icon" type="image\png" href="{{asset('icons\site.png')}}">
+    <link rel="icon" type="image\png" href="{{asset('img/site.png')}}">
 </head>
 <body>
-<h3>{{$user->name}}, для подтверждения регистрации нажмите на кнопку ниже:</h3><br>
+<h3>{{$user->name}}, для подтверждения регистрации нажмите на ссылку ниже:</h3><br>
 
-<form method="get" action="{{route('regsecFrom', ['_token' => $user->_token])}}">
-    @csrf
-    <button type="submit">ПОДТВЕРЖДАЮ</button>
-</form>
+<a href="{{route('regsecFrom', ['_token' => $user->_token])}}">ПОДТВЕРЖДАЮ</a>
 
 <br><br><br>
 

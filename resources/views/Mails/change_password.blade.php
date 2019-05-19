@@ -8,10 +8,9 @@
         .text-danger{
             color: #F00B5B;
         }
-        button{
-            background-color: lightpink;
+        a{
             font-size: large;
-            margin-left: 130px;
+            margin-left: 100px;
         }
     </style>
 
@@ -20,11 +19,9 @@
 </head>
 <body>
 
-            <h3>Подтвердите изменение пароля, нажав на кнопку ниже:</h3><br>
+            <h3>Подтвердите изменение пароля, нажав на ссылку ниже:</h3><br>
 
-            <form method="get" action="{{route('restore', ['user' => $user->id])}}">
-                <button type="submit">ПОДТВЕРЖДАЮ</button>
-            </form>
+            <a href="{{route('restore', ['user' => $user->id])}}">ПОДТВЕРЖДАЮ</a>
 
             <br><br><br>
 
