@@ -248,7 +248,7 @@
               @foreach($comments as $comment)
                <div class="col-md-10 mb-md-0">
 
-                   <img class="d-inline" src="/img/user.png" id="icon-user">
+                   <img class="d-inline" src="{{$comment->icon}}" id="icon-user">
 
                    <h3 class="d-inline">{{$comment->author}}
                        <span class="date ml-3">{{$comment->created_at}}</span>

@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('author', 200);
             $table->integer('author_id')->unsigned();
             $table->text('text');
+            $table->string('icon');
             $table->timestamps();
         });
     }

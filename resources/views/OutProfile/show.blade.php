@@ -114,11 +114,11 @@
 
 
             @if(isset($comments))<hr style="width: 90%">
-              @foreach($comments as $line)
+              @foreach($comments as $comment)
                <div class="col-md-10 mb-md-3">
-                 <img class="d-inline" src="/img/user.png" id="icon-user">
-                 <h3 class="d-inline">{{$line->author}}<span class="date ml-3">{{$line->created_at}}</span></h3>
-                 <p class="pl-4 comment">{{ $line->text }}</p>
+                 <img class="d-inline" src="{{$comment->icon}}" id="icon-user">
+                 <h3 class="d-inline">{{$comment->author}}<span class="date ml-3">{{$comment->created_at}}</span></h3>
+                 <p class="pl-4 comment">{{ $comment->text }}</p>
                </div><!--col-10-->
                <hr style="width: 90%">
               @endforeach

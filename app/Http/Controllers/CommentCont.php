@@ -19,6 +19,10 @@ class CommentCont extends Controller
         $comment->article_id = $article->id;
         $comment->author = $user->name;
         $comment->author_id = $user->id;
+
+        if ($user->isadmin == 1) $comment->icon = "/img/admin.png";
+        else $comment->icon = "/img/user.png";
+
         $comment->text = preg_replace('#<[^>]+>#', ' ', $request->text);
 
         $comment->save();
