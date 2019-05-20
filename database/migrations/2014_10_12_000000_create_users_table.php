@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->boolean('isadmin')->default(false);
             $table->string('_token', 255);
-            $table->integer('created_at');
-            $table->integer('updated_at');
+            $table->integer('created');
+            $table->integer('updated');
         });
     }
 

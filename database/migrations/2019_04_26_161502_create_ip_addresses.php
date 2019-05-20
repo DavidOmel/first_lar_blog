@@ -16,7 +16,7 @@ class CreateIpAddresses extends Migration
         Schema::create('ip_addresses', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('address')->unique();
-            $table->integer('created_at');
+            $table->integer('created');
         });
     }
 
