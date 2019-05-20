@@ -22,7 +22,7 @@ class CategoryCont extends Controller
         $categories = Category::all();
 
         $category = new Category;
-        $category->created_at = time();
+        $category->created = time();
         $category->name = $request->category;
         $category->save();
 
@@ -45,7 +45,7 @@ class CategoryCont extends Controller
     public function update(RequestCategory $request, User $user, Category $category)
     {
         $categories = Category::all();
-        $category->updated_at = time();
+        $category->updated = time();
         $category->name = $request->category_update;
         $category->save();
         return redirect(route('categories.create',

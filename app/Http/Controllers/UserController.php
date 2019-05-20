@@ -40,7 +40,7 @@ class UserController extends Controller
 
     public function change_password(RequestUser $request, User $user){
         $user->password = md5($request->new_password);
-        $user->updated_at = time();
+        $user->updated = time();
         $user->save();
         return redirect(route('entry'));
     }
