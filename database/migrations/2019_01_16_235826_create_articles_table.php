@@ -24,8 +24,8 @@ class CreateArticlesTable extends Migration
             $table->string('img');
             $table->text('views_ip_id')->nullable();
             $table->integer('views')->nullable()->unsigned();
-            $table->integer('created');
-            $table->integer('updated');
+            $table->integer('created')->default(null);
+            $table->integer('updated')->default(null);
         });
     }
 

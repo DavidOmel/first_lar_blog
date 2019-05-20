@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7de96179-7551-4e94-a64d-9bd666afc45b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryCont.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryCont.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentCont.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentCont.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Registration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php" afterDir="false" />
@@ -36,13 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-149">
-              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-              <folding>
-                <element signature="e#40#77#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -102,17 +96,17 @@
         <option value="$PROJECT_DIR$/app/Models/Article.php" />
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
         <option value="$PROJECT_DIR$/app/Models/Comment.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_26_161502_create_ip_addresses.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_17_223844_create_comments_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Registration.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Index/OutProfile.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CommentCont.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CategoryCont.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ArticleContr.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_17_223844_create_comments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_26_161502_create_ip_addresses.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
       </list>
     </option>
   </component>
@@ -171,6 +165,12 @@
               <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="first_lar_blog" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first_lar_blog" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="first_lar_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -335,12 +335,12 @@
       <workItem from="1556355030419" duration="1050000" />
       <workItem from="1557685342580" duration="9000" />
       <workItem from="1558087556060" duration="32078000" />
-      <workItem from="1558260397959" duration="11262000" />
+      <workItem from="1558260397959" duration="11566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655642000" />
+    <option name="totallyTimeSpent" value="655946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="744" extended-state="0" />
@@ -348,7 +348,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" weight="0.32959184" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.22857143" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.22857143" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -606,41 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_26_161502_create_ip_addresses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_17_223844_create_comments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -722,6 +687,41 @@
           <folding>
             <element signature="e#40#77#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_235826_create_articles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_17_223844_create_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_26_161502_create_ip_addresses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_16_235324_create_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
         </state>
       </provider>
     </entry>
