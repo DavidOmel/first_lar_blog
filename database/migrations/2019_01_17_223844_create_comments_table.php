@@ -20,8 +20,8 @@ class CreateCommentsTable extends Migration
             $table->integer('author_id')->unsigned();
             $table->text('text');
             $table->string('icon');
-            $table->integer('created')->default(null);
-            $table->integer('updated')->default(null);
+            $table->integer('created');
+            $table->integer('updated')->nullable();
         });
     }
 
