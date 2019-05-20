@@ -101,7 +101,7 @@
             <p class="lead">
               {{$article->full_text}}
             </p>
-            <span class="date-article mt-4">{{date("d-m-Y", $article->created_at)}}</span>
+            <span class="date-article mt-4">{{date("d-m-Y", $article->created)}}</span>
           </div><!--col-11-->
         </div><!--row-->
       </div>
@@ -122,7 +122,7 @@
               @foreach($comments as $comment)
                <div class="col-md-10 mb-md-3">
                  <img class="d-inline" src="{{$comment->icon}}" id="icon-user">
-                 <h3 class="d-inline">{{$comment->author}}<span class="date ml-3">{{date("d-m-Y", $comment->created_at)}}</span></h3>
+                 <h3 class="d-inline">{{$comment->author}}<span class="date ml-3">{{date("d-m-Y", $comment->created)}}</span></h3>
                  <p class="pl-4 comment">{{ $comment->text }}</p>
                </div><!--col-10-->
                <hr style="width: 90%">

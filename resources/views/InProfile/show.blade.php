@@ -173,7 +173,7 @@
             <p class="lead">
               {{$article->full_text}}
             </p>
-              <span class="date-article mt-4">{{date("d-m-Y", $article->created_at)}}</span>
+              <span class="date-article mt-4">{{date("d-m-Y", $article->created)}}</span>
           </div><!--col-11-->
         </div><!--row-->
       </div>
@@ -251,7 +251,7 @@
                    <img class="d-inline" src="{{$comment->icon}}" id="icon-user">
 
                    <h3 class="d-inline">{{$comment->author}}
-                       <span class="date ml-3">{{date("d-m-Y", $comment->created_at)}}</span>
+                       <span class="date ml-3">{{date("d-m-Y", $comment->created)}}</span>
                    </h3>
                  <div class="acts-but-com">
                    @if($user->id == $comment->author_id || $user->isadmin == 1)
